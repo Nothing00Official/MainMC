@@ -1,0 +1,681 @@
+###########################################
+#                                         #
+#      MainMC Reloaded by Nothing00       #
+#                                         #
+###########################################
+
+#Permissions:
+# main.reload - Permission to reload plugin configuration.
+# main.mainmc - Permission to show help commands
+# main.gamemode - Permission to change gamemode.
+# main.gamemode.other - Permission to change gamemode to other players.
+# main.give - Permission to give items.
+# main.vanish - Permission to become invisible.
+# main.vanish.other - Permission to set invisible an other player.
+# main.enchant - Permission to enchant item in your hand.
+# main.enchant.other - Permission to enchant item in player's hand.
+# main.kick - Permission to kick a player.
+# main.xp - Permission to use XP commands.
+# main.xp.show - Permission to show a player XP.
+# main.xp.set - Permission to set XP player value.
+# main.xp.give - Permission to give XP levels to player.
+# main.feed - Permission to use feed command.
+# main.feed.other - Permission to use feed command on other player.
+# main.heal - Permission to use heal command.
+# main.heal.other - Permission to use heal command on other player.
+# main.god - Permission to toggle on/off god mode.
+# main.god.other - Permission to active/disable god mode on other player.
+# main.hat - Permission to set block in your hand as hat.
+# main.hat.other - Permission to set block in your hand as hat on other player.
+# main.fly - Permission to toggle on/off fly mode.
+# main.fly.other - Permission to toggle on/off fly mode on other player.
+# main.speed - Permission to use speed command.
+# main.time - Permission to change time in all worlds.
+# main.weather - Permission to change weather in all worlds.
+# main.repair - Permission to use repair command.
+# main.repair.hand - Permission to repair item in your hand.
+# main.repair.all - Permission to repair all items in your inventory.
+# main.workbench - Permission to open workbench as inventory.
+# main.me - Permission to use /me command.
+# main.clear - Permission to clear your inventory.
+# main.clear.other - Permission to clear inventory of other players.
+# main.tp - Permission to teleport to an other player.
+# main.tp.other - Permission to teleport a player to an other player.
+# main.tphere - Permission to teleport an other player to you.
+# main.invsee - Permission to see inventory of an other player.
+# main.invsee.interact - Permission to interact with inventory of an other player.
+# main.enderchest - Permission to open enderchest as inventory.
+# main.enderchest.other - Permission to see enderchest of an other player.
+# main.enderchest.other.interact - Permission to interact with enderchest of an other player.
+# main.broadcast - Permission to use broadcast command.
+# main.kickall - Permission to kick all player online.
+# main.kill - Permission to kill a player.
+# main.tpall - Permission to teleport all player online to you.
+# main.tpall.other - Permission to teleport all players to one player.
+# main.tppos - Permission to teleport to a location.
+# main.tppos.other - Permission to teleport player to a location.
+# main.tptoggle - Permission to toggle allow or deny teleporting to you.
+# main.tptoggle.other - Permission to toggle allow or deny teleporting to a player.
+# main.getpos - Permission to see your location.
+# main.getpos.other - Permission to see location of an other player.
+# main.spawner - Permission to change mob spawner type.
+# main.thor - Permission to fulminate an other player.
+# main.list - Permission to see list of all player online.
+# main.list.viewall - Permission to see list of all player online (incluse player vanished).
+# main.afk - Permission to use /afk command.
+# main.afk.other - Permission to set afk an other player.
+# main.afk.bypasskick - Permission to stay online after afk-kick-time.
+# main.helpstaff - Permission to use helpstaff command.
+# main.helpstaff.receive - Permission to see message sent to helpstaff.
+# main.msg - Permission to send private message.
+# main.reply - Permission to reply to a private message.
+# main.back - Permission to use back command.
+# main.tpa - Permission to use tpa command.
+# main.tpahere - Permission to use tpahere command.
+# main.tpaccept - Permission to accept a teleport request.
+# main.tpdeny - Permission to reject a teleport request.
+# main.setspawn - Permission to set spawn.
+# main.spawn - Permission to use /spawn command.
+# main.warps - Permission to use warp commands.
+# main.warp.list - Permission to see warp list.
+# main.warp - Permission to use warp command.
+# main.setwarp - Permission to set a warp.
+# main.delwarp - Permission to delete a warp.
+# main.back.bypassdelay - Permission to bypass delay back command.
+# main.spawn.bypassdelay - Permission to bypass delay spawn command.
+# main.warps.bypassdelay - Permission to bypass delay warp command.
+# main.kit - Permission to use kit command.
+# main.kits - Permission to see kit list.
+# main.kits.bypassdelay - Permission to bypass kit give delay.
+# main.kits.other - Permission to give kit to other players.
+# main.kit.<name> - Permission to get a specific kit.
+# main.nick - Permission to set a custom name.
+# main.nick.color - Permission to use nickname color.
+# main.nick.format - Permission to use nickname format.
+# main.nick.magic - Permission to use &k format in nickname.
+# main.nick.other - Permission to set a custom nickname to an other player.
+# main.realname - Permission to use realname command.
+# main.heal.bypassdelay - Permission to bypass heal delay.
+# main.feed.bypassdelay - Permission to bypass feed delay.
+# main.ignore.bypassignore - Permission to bypass ignore.
+# main.ignore - Permission to use ignore command.
+# main.ignore.other - Permission to set a player ignored from an other player.
+# main.ignores - Permission to see list of ignored players.
+# main.ignores.other - Permission to see list of ignored players of an other player.
+# main.socialspy - Permission to use socialspy command.
+# main.socialspy.other - Permission to toggle on/off socialspy mod to an other player.
+# main.mail - Permission to use mail command.
+# main.mail.send - Permission to send an email.
+# main.mail.read - Permission to read an email.
+# main.mail.clear - Permission to delete all email.
+# main.spymail - Permission to use spymail commands.
+# main.spymail.read - Permission to read mails of an other player.
+# main.spymail.clear - Permission to delete all emails of an other player.
+# main.spymail.clearindex - Permission to delete a specif mail of an other player.
+# main.motd - Permission to see server motd.
+# main.silentjoin - Permission to bypass join notification.
+# main.silentjoin.vanish - Permission to became invisible on join.
+# main.silentquit - Permission to bypass quit notification.
+# main.untouchable - Permission to bypass all kick, bans, mutes...
+# main.home - Permission to use home command.
+# main.sethome - Permission to set home.
+# main.sethome.vip - Permission to set multiple home (number of vip)
+# main.sethome.staff - Permission to set multiple home (number of staff)
+# main.delhome - Permission to delete home.
+# main.delhome.other - Permission to delete home of an other player.
+# main.home.other - Permission to see homes of an other player.
+# main.adminhome - Permission to use admin-home commands.
+# main.adminhome.teleport - Permission to teleport to an home of an other player.
+# main.adminhome.set - Permission to set an home of an other player.
+# main.mute - Permission to use mute command.
+# main.tempmute - Permission to use tempmute command.
+# main.unmute - Permission to use unmute command.
+# main.chat - Permission to write in chat.
+# main.chat.color - Permission to use colors in chat.
+# main.chat.format - Permission to use format in chat.
+# main.chat.magic - Permission to use &k format in chat.
+# main.sign - Permission to use sign.
+# main.sign.color - Permission to use color in sign.
+# main.sign.format - Permission to use format in sign.
+# main.sign.magic - Permission to use &k format in sign.
+# main.sign.disposal.create - Permission to create a disposal sign.
+# main.sign.time.create - Permission to create a time sign.
+# main.sign.weather.create - Permission to create a weather sign.
+# main.sign.enchant.create - Permission to create a enchant sign.
+# main.sign.warp.create - Permission to create a warp sign.
+# main.sign.kit.create - Permission to create a kit sign.
+# main.sign.heal.create - Permission to create a heal sign.
+# main.sign.repair.create - Permission to create a repair sign.
+# main.sign.gamemode.create - Permission to create a gamemode sign.
+# main.sign.free.create - Permission to create a free sign.
+# main.sign.buy.create  Permission to create a buy sign.
+# main.sign.balance.create - Permission to create a balance sign.
+# main.sign.sell.create - Permission to create a sell sign.
+# main.sign.disposal.use - Permission to use a disposal sign.
+# main.sign.time.use - Permission to use a time sign.
+# main.sign.weather.use - Permission to use a weather sign.
+# main.sign.enchant.use - Permission to use a enchant sign.
+# main.sign.warp.use - Permission to use a warp sign.
+# main.sign.kit.use - Permission to use a kit sign.
+# main.sign.heal.use - Permission to use a heal sign.
+# main.sign.repair.use - Permission to use a repair sign.
+# main.sign.gamemode.use - Permission to use a gamemode sign.
+# main.sign.free.use - Permission to use a free sign.
+# main.sign.buy.use  Permission to use a buy sign.
+# main.sign.balance.use - Permission to use a balance sign.
+# main.sign.sell.use - Permission to use a sell sign.
+# main.build - Permission to build.
+# main.build.use - Permission to interact with blocks.
+# main.build.place - Permission to place blocks.
+# main.build.break - Permission to break blocks.
+# main.build.use.bypass - Permission to bypass interact blacklist.
+# main.build.place.bypass - Permission to bypass place blacklist.
+# main.build.break.bypass - Permission to bypass break blacklist.
+# main.world - Permission to teleport to a world.
+# main.world.other - Permission to teleport a player to a world.
+# main.jail - Permission to use jail command.
+# main.jail.create - Permission to create a jail.
+# main.jail.delete - Permissiont to delete a jail.
+# main.jails - Permission to see jail list.
+# main.unjail - Permission to unjail a player.
+# main.lookup - Permission to see lookup about a player.
+# main.banip - Permission to use banip command.
+# main.unbanip - Permission to use unbanip command.
+# main.tempban - Permission to tempban
+# main.ban - Permission to ban
+# main.unban - Permission to unban
+# main.seen - Permission to see IP information.
+# main.bypasscommands - Permission to bypass blacklist commands.
+# main.balance - Permission to see your balance.
+# main.balance.other - Permission to see balance of a player.
+# main.eco - Permission to use eco commands.
+# main.eco.give - Permission to give money.
+# main.eco.set - Permission to set new player balance.
+# main.eco.take - Permission to remove money from player balance.
+# main.pay - Permission to use pay command.
+# main.firstlogin - Permission to use firstlogin command.
+# main.vanish.pvp - Keep vanish in pvp
+# main.god.pvp - Keep godmode in pvp
+# main.kits.creator - Permissions to managing kit in game
+# main.book - Permission to use /book command
+# main.book.other - Permission to give book to other player.
+# main.skull - Permission to use /skull
+# main.skull.other - Permission to give skull to a player
+# main.ping - Permission to use /ping
+# main.ping.other - Permission to see others players ping
+# main.lastlocation.other - Permission to see others players last location
+# main.lastlocation - Permission to see your last location
+# main.ptime - Permission to see your online time
+# main.ptime.other - Permission to see others players online time
+# main.bypasscombat - Permission to bypass CombatMode
+# main.item.command - Permission to set command to an item
+# main.burn - Permission to burn a player
+# main.ext - Permission to use ext command
+# main.ext.other - Permission to unburn other player
+# main.nightvision - Permission to use /nv command
+# main.nightvision.other - Permission to togglie nightvision to other player
+# main.near - Permission to get players near your location
+# main.near.other - Permission to get players near other player location
+# main.withdraw - withdraw money
+# main.withdraw.get - use bankcheck
+# main.fireball - launch fireballs
+# main.warps.gui - edit warp using gui
+
+###########################################
+#                                         #
+#           Global Configuration          #
+#                                         #
+###########################################
+
+# change name of SQLite file data .db, if you change this
+# go to /data/ folder and change name of file database.db with name that you puth here
+database-name: 'database'
+
+# if a player is op his chatname will be of this color you set
+ops-color-name: 'c'
+
+# when a player has a custom nickname after his chatname will be this prefix you set
+nickname-prefix: '~'
+
+# The maximum characters length allowed in nicknames.
+nickname-length: 20
+
+# default permissions, if you use any permissions plugin set here MainMC permissions for users
+# set use-permissions to true if you use Permissions plugin as PermissionsEx or PermissionsPlus
+use-permissions: false
+# add permission name without "main." for add default permissions
+user-permissions:
+- afk
+- back
+- balance
+- baltop
+- balance.other
+- build
+- build.use
+- build.place
+- build.break
+- clear
+- sethome
+- home
+- delhome
+- chat
+- help
+- helpstaff
+- ignore
+- kit
+- kit.tools
+- list
+- mail
+- mail.send
+- mail.read
+- mail.clear
+- me
+- motd
+- msg
+- pay
+- realname
+- sign
+- sign.use
+- sign.use.balance
+- sign.use.buy
+- sign.use.disposal
+- sign.use.enchant
+- sign.use.free
+- sign.use.gamemode
+- sign.use.heal
+- sign.use.kit
+- sign.use.repair
+- sign.use.sell
+- sign.use.time
+- sign.use.warp
+- spawn
+- suicide
+- ptime
+- tpa
+- tpaccept
+- tpahere
+- tpdeny
+- warp
+- warps
+
+# Time that player is invincible when was teleported
+teleport-safety:
+  enabled: true
+  duration: 4
+
+# safe from attack on join
+login-attack-delay: 5
+
+# Teleport delays for differents cases
+Teleport:
+ tpa-expire-time: 190
+ warp-delay: false
+ warp-delay-time: 10
+ spawn-delay: false
+ spawn-delay-time: 30
+ back-delay: false
+ back-delay-time: 30
+
+
+# The delay, in seconds, required between /heal or /feed attempts.
+Heal:
+ enabled-delay: false
+ heal-delay: 60 
+ feed-delay: 60
+
+# Add worlds to this list, if you want to automatically disable god mode there.
+no-god-in-worlds:
+- example_the_end
+- example_nether
+
+# when player disconnected disable god mode
+god-disable-quit: false
+
+# when a player send mail if targetplayer mailbox's are full not send message
+not-send-full-mailbox: true
+mailboxlimit: 10 
+ 
+# bypass max level per enchantment of default 
+enchantments:
+ bypassmaxlevel: false
+ # if you want reapir enchantment armor with /reapir
+ repair-enchanted: false
+
+#if true you must give to player main.warp.name permission
+per-warp-permission: false
+
+AFK:
+ AutoAFK: true
+ # if AutoAFK is true after this time in seconds a player go to AFK automatically
+ time: 190
+ AutoKick: false
+ # if AutoKick is true after this time in seconds, when a player is AFK will be kicked
+ Kick-time: 190
+ Kick-Message: '&cYou are been kicked for AFK'
+# Should we automatically remove afk status when a player moves?
+# Player will be removed from AFK on chat/command regardless of this setting.
+cancel-afk-on-move: true
+# Set this to true, if you want to freeze the player, if the player is AFK.
+# take sure that cancel-afk-on-move is set to false for use this.
+freeze-afk-players: false
+ 
+# If false disable the death messages of Minecraft here..
+death-messages: true
+
+# if a player have permission main.selentjoin and main.selntquit 
+# when player join or quit the message was not sent to server
+# use main.selentjoin.vanish for hide player on join 
+allow-silent-join-quit: false
+
+# You can set a custom join message here, set to "none" to disable.
+# You may use color codes, use {player} the player's name or {displayname} for the player's displayname.
+custom-join-message: "none"
+ 
+# You can set a custom quit message here, set to "none" to disable.
+# You may use color codes, use {player} the player's name or {displayname} for the player's displayname.
+custom-quit-message: "none"
+
+
+# Allow players to have multiple homes.
+# if player have main.sethome permission can set only default number home
+# you can give more home with main.sethome.vip or main.sethome.staff
+sethome:
+  default: 1
+  vip: 3
+  staff: 5
+
+# when player death respawn at home location, not at spawn location
+spawn-at-home-on-death: false  
+  
+# on join teleport player to spawn, if false on join player will be in your last location
+spawn-TP: false
+  
+# create signs with this features remove # to enable
+
+enabledSigns:
+  #- color
+  #- balance
+  #- buy
+  #- sell
+  #- free
+  #- disposal
+  #- warp
+  #- kit
+  #- enchant
+  #- gamemode
+  #- heal
+  #- repair
+  #- time
+  #- weather  
+
+# Open warp gui on /warp or /warps command
+warp-Gui:
+ enabled: true
+ locked-label: '&cDenied to you'
+ admin-teleport: '&aTeleport to warp'
+ change-icon: '&eChange Icon'
+ show-warp: '&bShow Warp in Gui'
+ hide-warp: '&aHide Warp in Gui'
+  
+# Open kit gui on /kit or /kits command
+kit-Gui: 
+ enabled: true
+ preview-label: '&bRight-Click to Preview'
+ locked-preview-label: '&bClick to Preview'
+ get-lable: '&aLeft-Click to get'
+ locked-label: '&cDenied to you'
+ 
+
+# fetures similar CombatLog, when you hit a player you enter in CombatMode 
+# during CombatMode you can't use command or fly and if you quit, you die.
+CombatMode:
+ enable: false
+ exit-delay: 60
+ enter-message: '&9Combat> &e{player} &7set CombatMode to you!'
+ sender-message: '&9Combat> &7You are in CombatMode do not quit!'
+ exit-message: '&9Combat> &7You are unlogged from CombatMode.'
+  
+###########################################
+#                                         #
+#           Books Configuration           #
+#                                         #
+###########################################
+
+# this section allows you to create personalized 
+# books and to show them in the kits with the tag book: name
+Books:
+ test:
+  author: Nothing00_
+  title: '&4&lWelcome in MainMC' 
+  # each line represents a page, if you want to wrap with the text use /d
+  pages:
+  - 'this is a test line for give you an example of this book /dThis is a second line in my first page'
+  - 'Page2: Welcome in MainMC! This features was asked to me by a FAN /d what do you think about?'
+  - 'Page3: If you have bugs contact me! ;) /dline1 /dline2 /dline3 /dline4 /d&9c&ci&3a&5o'
+ test2:
+  author: Notch
+  title: 'A Minecraft''s story'  
+  pages:
+  - 'Sorry but I''m not Notch so i do not know to write :P'
+  
+###########################################
+#                                         #
+#        Punishment Configuration         #
+#                                         #
+###########################################  
+
+# if is true create a file in which all data on punishments are saved
+# save time, date, sender, victim, ecc...
+create-file-history: true
+divide-per-file: false 
+
+# set defualt motivation for punishment
+Kick:
+ Motivation: '&cBreaking rules'
+Mute:
+ Motivation: '&cIncorrect language'
+Ban:
+ Motivation: '&cserious breach of the rules'
+
+# set command that player can be run in jail
+jail-whitelist-commands:
+- /login
+- /register
+- /unlockaccount
+ 
+###########################################
+#                                         #
+#          Economy configuration          #
+#                                         #
+########################################### 
+
+
+# if you have conflicts with others plugins set this to true
+# all MainMC economy system (included addon) will be disabled!
+disable-economy: false
+
+# if you want to use Vault economy add MainMC-Economy addon and set this to true
+# if this is set to false MainMC will use its internal economy system.
+addon:
+ enabled: false
+ use-gui: true
+ give: '&eGive Money'
+ take: '&eTake Money'
+ set: '&eSet Balance'
+ add: '&2+{amount}'
+ remove: '&4-{amount}'
+ close: '&cClose'
+ save: '&a&lSave'
+ top5: '&3View Top 5'
+ top10: '&3View Top 10'
+ top20: '&3View Top 20'
+ top1: '&aTop 1'
+ top2: '&bTop 2'
+ top3: '&eTop 3'
+
+# set starting bilance
+balance: 10.0
+# set format of valuta
+valuta-format: '$'
+ 
+
+
+###########################################
+#                                         #
+#           Chat configuration            #
+#                                         #
+###########################################  
+
+use-chat-format: true
+# modify default format message in chat, user this varibale {displayname} or {player}
+format: '<{prefix}{displayname}{suffix}> &r'
+
+# if use PermissionsPlus plugin set a chat-format per group 
+Groups: {} # delete {} if you want to unlock groups
+# default: '{prefix}{displayname}{suffix}&7: '
+# admin: '{prefix}{displayname}{suffix}&7: &c'
+
+# set your custom announcement in broadcast to the server
+Announcement:
+ enable: false
+ delay: 120
+ messages:
+  1:
+  - '&7&m========================================'
+  - ''
+  - '&3            Vote our server!'
+  - '&e    http://www.voteserver.com/yourserver'
+  - ''
+  - '&7&m========================================'
+  2:
+  - '&7&m========================================'
+  - ''
+  - '&3           Get info to our warp!'
+  - '&e                /warp info'
+  - ''
+  - '&7&m========================================'
+  
+# format message on player type /msg or /reply
+Message:
+ sent: '&8[&6me&7->&3%to%&8] &7%message%'
+ received: '&8[&3%from%&7->&6me&8] &7%message%'
+ spy: '&8[&3%from%&7->&b%to%&8] &7%message%'
+
+ 
+ 
+###########################################
+#                                         #
+#        BuildProtect Configuration       #
+#                                         #
+###########################################
+
+# set numeric id of block that you do not want to use on click
+non-usable-blocks:
+#- 116
+#- 145
+
+# set numeric id of block that you do not want to be break
+non-breakable-blocks:
+#- 7
+#- 49
+#- 138
+
+# set numeric id of block that you do not want to be place
+non-placeable-blocks:
+#- 7
+#- 46
+
+###########################################
+#                                         #
+#     Server Protection configuration     #
+#                                         #
+########################################### 
+
+# set this true if you do not want that player can duplicate his name using case senstive bug
+# for example Nothing00_ = nThIng00_
+case-sensitive-protection: true
+# set deny message for case sensitive protection
+case-sensitive-deny-message: '&7We prefer that you join with your original nickname: &e{player}'
+
+# set this true if you want to ask when player join a keyword to unlock his account when his IP is different than last
+# if it is true when you join with a different IP you must be unlock your account with /unlockaccount <keyword>
+lockaccount-protection: false
+
+# set keyword message on first join
+setlockaccount-message: '&9Account> &7We strongly advise you to protect your account with &e/setlockaccount <keyword>'
+# set keyword message on IP changed
+unlockaccount-message: '&9Account> &7You must unlock your account with &e/unlockaccount <keyword>'
+# on set keyword message
+set-keyword-message: '&9Account> &7Your keyword will  be &e{keyword}'
+# on change keyword message
+change-keyword-message: '&9Account> &7Your keyword was changed to &e{keyword}'
+# set message on unlocked
+unlocked-message: '&9Account> &7Succefully unlocked!'
+# set message on wrong unlock
+unlock-wrong-message: '&9Account> &7Wrong keyword!'
+# if lockaccount-protection is set to false set message to on unlock commands
+no-active-protect-message: '&9Account> &7This protection is not active! set &elockaccount-protection: true &7in &econfig.yml &7file!'
+
+# set command that player can run when is locked
+whitelist-locked-cmds:
+- /login
+- /register
+
+# if is set to true if a Player has the same IP of server address he will be dinied
+# NOT SET THIS TRUE IF YOU ARE THE HOST
+server-Player-IP-protection: false
+# set deny message for server Player-IP protection
+server-Player-IP-deny-message: '&cStrange, do you have the same server address? bye Bye'
+
+# set this true if you do not want that player can duplicate his UUID using online-mode bug
+# for example Nothing00_ = UUID1 but Nothing00_ = UUID2
+# if you enable this option you must be sure not to change the online-mode entry anymore, 
+# you should delete all user data, then configure this before using this plugin for users
+UUID-protection: true
+# set deny message for case sensitive protection
+UUID-deny-message: '&cYour UUID does not coincide with the data in our database!'
+
+# set commands list to hide by player try to run it
+blacklist-commands:
+- /plugins
+- /pl
+- /bukkit:op
+- /bukkit:deop
+- /minecraft:me
+- /minecraft:?
+- /?
+- /bukkit:?
+- //calc
+- //calculate
+- /worldedit:/calc
+- /worldedit:/calculate
+- //eval
+- //evaluate
+- /worldedit:/eval
+- /worldedit:/evaluate
+- //solve
+- /worldedit:/solve
+
+# set message on doing blacklisted command
+blacklist-commands-message: '&rUnknown command. Type "/help" for help.'
+
+# all username in this blacklist can't join in the server
+blacklist-usernames:
+- md_5
+- CONSOLE
+- list
+- all
+# set kick blacklist message
+blacklist-usernames-message: '&cSorry but your username is banned from our server!'
+
+###########################################
+#                                         #
+#        New Player configuration         #
+#                                         #
+###########################################  
+
+# set a custom message when new player join, usi {player} or {displayname}
+new-player-join-message: '&3&oWelcome to the server {player}'
+
+# give kit on join
+first-kit: 'tools'
