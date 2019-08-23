@@ -1,6 +1,6 @@
 name: MainMC
 main: mainmc.nothing00.MainPlugin
-version: 3.4.3
+version: 3.4.5Beta
 author: Nothing00
 description: The Main Minecraft server plugin
 load: STARTUP

@@ -2,6 +2,7 @@ package mainmc.listener;
 
 import java.util.HashSet;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -73,6 +74,10 @@ public class DamageEvent implements Listener {
 		if (e.getEntity() instanceof Player) {
 
 			Player p = (Player) e.getEntity();
+			
+			if(!Bukkit.getServer().getOnlinePlayers().contains(p) || p.getUniqueId()==null)
+				return;
+			
 			User user = new User(p.getName());
 
 			// LOCKED

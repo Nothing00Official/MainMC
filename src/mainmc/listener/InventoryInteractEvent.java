@@ -83,7 +83,7 @@ public class InventoryInteractEvent implements Listener {
 			item = e.getCurrentItem();
 		}
 
-		if (e.getClickedInventory().getTitle().equals("Kits")) {
+		if (e.getView().getTitle().equals("Kits")) {
 			e.setCancelled(true);
 			if (item == null)
 				return;
@@ -106,7 +106,7 @@ public class InventoryInteractEvent implements Listener {
 				}
 			}
 		}
-		if (e.getClickedInventory().getTitle().contains("Preview: ")) {
+		if (e.getView().getTitle().contains("Preview: ")) {
 			e.setCancelled(true);
 			if (item == null)
 				return;
@@ -117,13 +117,14 @@ public class InventoryInteractEvent implements Listener {
 		}
 
 		// WARPS GUI
-		if (e.getClickedInventory().getTitle().equals("Warps")) {
+		if (e.getView().getTitle().equals("Warps")) {
 			e.setCancelled(true);
 			if (item == null)
 				return;
 			e.setCancelled(true);
 			if (item != null && item.hasItemMeta()
-					&& !item.getItemMeta().getDisplayName().equals(config.getDenyWarpLabel())) {
+					&& (item.getItemMeta().getLore() == null || item.getItemMeta().getLore().isEmpty()
+							|| !item.getItemMeta().getLore().get(0).equals(config.getDenyWarpLabel()))) {
 				WarpGui gui = new WarpGui(p);
 				Warp warp = gui.getCurrentWarp(item);
 				if (gui.hasAdminGuiPermissions()) {
@@ -136,10 +137,10 @@ public class InventoryInteractEvent implements Listener {
 			}
 			return;
 		}
-		if (e.getClickedInventory().getTitle().contains("AdminWarp: ")) {
+		if (e.getView().getTitle().contains("AdminWarp: ")) {
 			e.setCancelled(true);
 			WarpGui gui = new WarpGui(p);
-			Warp warp = new Warp(e.getClickedInventory().getTitle().split(" ")[1]);
+			Warp warp = new Warp(e.getView().getTitle().split(" ")[1]);
 			if (item == null)
 				return;
 			if (item.getType().equals(Material.STAINED_CLAY))
@@ -160,7 +161,7 @@ public class InventoryInteractEvent implements Listener {
 	public void onClose(InventoryCloseEvent e) {
 		Messages msg = new Messages();
 
-		if (!e.getInventory().getTitle().contains("Kit:"))
+		if (!e.getView().getTitle().contains("Kit:"))
 			return;
 
 		Kit kit = new Kit(e.getInventory().getTitle().split(" ")[1], (Player) e.getPlayer());
