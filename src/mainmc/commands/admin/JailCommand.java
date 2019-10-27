@@ -43,7 +43,7 @@ public class JailCommand implements CommandExecutor {
 						return true;
 
 					} else {
-						sender.sendMessage("§rUsage: /createjail <id>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/createjail <id>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -84,7 +84,7 @@ public class JailCommand implements CommandExecutor {
 						return true;
 
 					} else {
-						sender.sendMessage("§rUsage: /deljail <id>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/deljail <id>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -121,7 +121,7 @@ public class JailCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /jail <player> <id>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/jail <player> <id>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -148,7 +148,7 @@ public class JailCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /unjail <player>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/unjail <player>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

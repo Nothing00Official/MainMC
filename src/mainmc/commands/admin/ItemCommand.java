@@ -68,8 +68,7 @@ public class ItemCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage(
-								"§rUsage: /give <player> <item> <amount> [enchant:level] [name:displayname]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/give <player> <item> <amount> [enchant:level] [name:displayname]"));
 						return true;
 					}
 				} else {
@@ -115,7 +114,7 @@ public class ItemCommand implements CommandExecutor {
 						return true;
 
 					} else {
-						sender.sendMessage("§rUsage: /item <item> <amount> [enchant:level] [name:displayname]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/item <item> <amount> [enchant:level] [name:displayname]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -163,7 +162,7 @@ public class ItemCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /enchant <enchantment> <level> [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/enchant <enchantment> <level> [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -199,14 +198,14 @@ public class ItemCommand implements CommandExecutor {
 								sender.sendMessage(msg.getMessage("DONE"));
 								return true;
 							} else {
-								sender.sendMessage("§rUsage: /icadd <console/player> <command>");
+								sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/icadd <console/player> <command>"));
 							}
 						} else {
 							sender.sendMessage(msg.getMessage("NoItem"));
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /icadd <console/player> <command>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/icadd <console/player> <command>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

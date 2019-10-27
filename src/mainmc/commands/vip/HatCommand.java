@@ -83,7 +83,7 @@ public class HatCommand implements CommandExecutor {
 									return true;
 								}
 							} else {
-								sender.sendMessage("§rUsage: /hat remove [player] | /hat [player]");
+								sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/hat remove [player] | /hat [player]"));
 							}
 						} else {
 							sender.sendMessage(msg.getMessage("No-Perm"));

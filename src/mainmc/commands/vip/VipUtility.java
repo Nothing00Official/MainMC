@@ -76,7 +76,7 @@ public class VipUtility implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /feed [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/feed [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -132,7 +132,7 @@ public class VipUtility implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /heal [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/heal [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -229,7 +229,7 @@ public class VipUtility implements CommandExecutor {
 									sender.sendMessage(msg.getMessage("DONE"));
 									return true;
 								} else {
-									sender.sendMessage("§rUsage: /god enable/disable [player]");
+									sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/god enable/disable [player]"));
 								}
 							} else {
 								sender.sendMessage(msg.getMessage("NoPlayer"));
@@ -324,7 +324,7 @@ public class VipUtility implements CommandExecutor {
 									sender.sendMessage(msg.getMessage("DONE"));
 									return true;
 								} else {
-									sender.sendMessage("§rUsage: /fly enable/disable [player]");
+									sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/fly enable/disable [player]"));
 								}
 
 							} else {
@@ -333,10 +333,10 @@ public class VipUtility implements CommandExecutor {
 							}
 
 						} else {
-							sender.sendMessage("§rUsage: /fly [player]");
+							sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/fly [player]"));
 						}
 					} else {
-						sender.sendMessage("§rUsage: /fly [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/fly [player]"));
 					}
 
 				} else {
@@ -378,7 +378,7 @@ public class VipUtility implements CommandExecutor {
 								return true;
 							}
 						} else {
-							sender.sendMessage("§rUsage: /repair hand/all");
+							sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/repair hand/all"));
 						}
 					} else if (args.length == 2) {
 						if (args[0].equalsIgnoreCase("hand")) {
@@ -419,10 +419,10 @@ public class VipUtility implements CommandExecutor {
 								return true;
 							}
 						} else {
-							sender.sendMessage("§rUsage: /repair hand/all [player]");
+							sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/repair hand/all [player]"));
 						}
 					} else {
-						sender.sendMessage("§rUsage: /repair hand/all [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/repair hand/all [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -486,7 +486,7 @@ public class VipUtility implements CommandExecutor {
 						}
 
 					} else {
-						sender.sendMessage("§rUsage: /getpos [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/getpos [player]"));
 					}
 
 				} else {
@@ -522,7 +522,7 @@ public class VipUtility implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /clear [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/clear [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -570,7 +570,7 @@ public class VipUtility implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /lastlocation [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/lastlocation [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -603,7 +603,7 @@ public class VipUtility implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /skull <playername> [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/skull <playername> [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -625,7 +625,7 @@ public class VipUtility implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /burn <player>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/burn [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -659,7 +659,7 @@ public class VipUtility implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /ext [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/ext [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -704,7 +704,7 @@ public class VipUtility implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /nightvision [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/nightvision [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

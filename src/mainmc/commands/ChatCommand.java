@@ -52,7 +52,7 @@ public class ChatCommand implements CommandExecutor {
 										.replaceAll("%player%", sender.getName()));
 						return true;
 					} else {
-						sender.sendMessage("§rUsage: /me <message>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/me <message>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -73,7 +73,7 @@ public class ChatCommand implements CommandExecutor {
 						cm.serverBroadcast();
 						return true;
 					} else {
-						sender.sendMessage("§rUsage: /broadcast <message>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/broadcast <message>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -95,7 +95,7 @@ public class ChatCommand implements CommandExecutor {
 						sender.sendMessage(msg.getMessage("Received").replaceAll("%count%", cm.sendToStaff() + ""));
 						return true;
 					} else {
-						sender.sendMessage("§rUsage: /helpstaff <message>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/helpstaff <message>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -123,7 +123,7 @@ public class ChatCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /msg <player> <message>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/msg <player> <message>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -150,7 +150,7 @@ public class ChatCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /reply <message>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/reply <message>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -194,7 +194,7 @@ public class ChatCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /ignores [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/ignores [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -267,7 +267,7 @@ public class ChatCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /ignore <player> [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/ignore <player> [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -321,7 +321,7 @@ public class ChatCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /unignore <player> [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/unignore <player> [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -365,7 +365,7 @@ public class ChatCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /socialspy [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/socialspy [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

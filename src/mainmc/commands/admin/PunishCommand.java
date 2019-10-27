@@ -74,7 +74,7 @@ public class PunishCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /kick <player> [motivation]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/kick <player> [motivation]"));
 						return true;
 					}
 				} else {
@@ -105,7 +105,7 @@ public class PunishCommand implements CommandExecutor {
 						return true;
 
 					} else {
-						sender.sendMessage("§rUsage: /kickall [motivation]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/kickall <player>"));
 						return true;
 					}
 				} else {
@@ -185,7 +185,7 @@ public class PunishCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage /mute <player> [motivation]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/mute <player> [motivation]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -274,7 +274,7 @@ public class PunishCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /tempmute <player> <d/h/m/s> [motivation]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/tempmute <player> <d/h/m/s> [motivation]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -302,7 +302,7 @@ public class PunishCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /unmute <player>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/unmute <player>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -323,7 +323,7 @@ public class PunishCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /lookup <player>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/lookup <player>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -344,7 +344,7 @@ public class PunishCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /history <player>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/history <player>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

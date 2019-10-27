@@ -66,7 +66,7 @@ public class BookCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /book <book> [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/book <book> [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

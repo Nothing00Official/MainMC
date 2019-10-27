@@ -130,10 +130,10 @@ public class EconomyCommand implements CommandExecutor {
 								return true;
 							}
 						} else {
-							sender.sendMessage("§rUsage: /eco give/set/take <player/all>  <money>");
+							sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/eco give/set/take <player/all>  <money>"));
 						}
 					} else {
-						sender.sendMessage("§rUsage: /eco give/set/take <player/all>  <money>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/eco give/set/take <player/all>  <money>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -216,7 +216,7 @@ public class EconomyCommand implements CommandExecutor {
 						}
 
 					} else {
-						sender.sendMessage("§rUsage: /pay <player> <money>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/pay <player> <money>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -257,7 +257,7 @@ public class EconomyCommand implements CommandExecutor {
 						sender.sendMessage(msg.getMessage("withdraw").replace("%money%", eco.getMoneyToString()));
 						return true;
 					} else {
-						sender.sendMessage("§eUsage: /withdraw <amount>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/withdraw <amount>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

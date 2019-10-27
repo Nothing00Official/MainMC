@@ -62,7 +62,7 @@ public class MailCommand implements CommandExecutor {
 								return true;
 							}
 						} else {
-							sender.sendMessage("§rUsage: /mail <read/clear>");
+							sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/mail <read/clear>"));
 						}
 					} else if (args.length >= 3) {
 						if (args[0].equalsIgnoreCase("send")) {
@@ -106,10 +106,10 @@ public class MailCommand implements CommandExecutor {
 								return true;
 							}
 						} else {
-							sender.sendMessage("§rUsage: /mail send <player> <message>");
+							sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/mail send <player> <message>"));
 						}
 					} else {
-						sender.sendMessage("§rUsage: /mail <send/read/clear> <player> <message>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/mail <send/read/clear> <player> <message>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

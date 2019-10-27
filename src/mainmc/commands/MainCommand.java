@@ -44,7 +44,7 @@ public class MainCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /main help <page>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/main help <page>"));
 						return true;
 					}
 				} else if (args.length == 2) {
@@ -63,7 +63,7 @@ public class MainCommand implements CommandExecutor {
 								MainPlugin.getExecutor().getPluginsByCommand(args[1]).toArray(new String[0])));
 						return true;
 					} else {
-						sender.sendMessage("§rUsage: /main help <page>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/main help <page>"));
 						return true;
 					}
 				} else {

@@ -60,7 +60,7 @@ public class HomeCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /sethome [name]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/sethome [name]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -102,7 +102,7 @@ public class HomeCommand implements CommandExecutor {
 						sender.sendMessage(msg.getMessage("Home"));
 						return true;
 					} else {
-						sender.sendMessage("§rUsage: /home [home]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/home [homeName]"));
 					}
 
 				} else {
@@ -146,7 +146,7 @@ public class HomeCommand implements CommandExecutor {
 						sender.sendMessage(msg.getMessage("delHome"));
 						return true;
 					} else {
-						sender.sendMessage("§rUsage: /delhome [home]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/delhome <homeName>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

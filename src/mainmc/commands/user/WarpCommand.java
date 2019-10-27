@@ -68,7 +68,7 @@ public class WarpCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /setwarp <warp>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/setwarp <warp>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -92,7 +92,7 @@ public class WarpCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /delwarp <warp>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/delwarp <warp>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -176,7 +176,7 @@ public class WarpCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /warp <warp> [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/warp <warp> [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

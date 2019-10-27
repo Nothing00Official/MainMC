@@ -73,7 +73,7 @@ public class TeleportCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /tp <player> [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/tp <player> [player]"));
 					}
 
 				} else {
@@ -104,7 +104,7 @@ public class TeleportCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /tphere <player>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/tphere <player>"));
 					}
 
 				} else {
@@ -145,7 +145,7 @@ public class TeleportCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /tpall [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/tpall [player]"));
 					}
 
 				} else {
@@ -205,7 +205,7 @@ public class TeleportCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /tppos <x> <y> <z> [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/tppos <x> <y> <z> [player]"));
 					}
 
 				} else {
@@ -251,7 +251,7 @@ public class TeleportCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage /tptoggle [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/tptoggle [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -303,7 +303,7 @@ public class TeleportCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /tpa <player>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/tpa <player>"));
 					}
 
 				} else {
@@ -355,7 +355,7 @@ public class TeleportCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /tpahere <player>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/tpahere <player>"));
 					}
 
 				} else {
@@ -460,7 +460,7 @@ public class TeleportCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /world <world> [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/world <world> [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

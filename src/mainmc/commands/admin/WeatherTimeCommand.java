@@ -92,7 +92,7 @@ public class WeatherTimeCommand implements CommandExecutor {
 						sender.sendMessage(msg.getMessage("setWeather").replaceAll("%time%", "Thundering"));
 						return true;
 					} else {
-						sender.sendMessage("§rUsage: /thunder [time]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/thunder [time]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

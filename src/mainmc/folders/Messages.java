@@ -16,7 +16,14 @@ public class Messages extends Config {
 	}
 
 	public String getMessage(String index) {
-		return (super.getString("Messages.Prefix")+" "+super.getString("Messages."+index)).replaceAll("&", "§");
+		
+		String prefix = super.getString("Messages.Prefix")+" ";
+		
+		if(!Boolean.parseBoolean(super.getString("Messages.usePrefix"))) {
+			prefix = "";
+		}
+		
+		return (prefix+super.getString("Messages."+index)).replaceAll("&", "§");
 	}
 	
 	public String getLookupMessage() {
@@ -77,6 +84,8 @@ public class Messages extends Config {
 				super.get().createSection("Messages");
 				FileConfiguration msg = super.get();
 				msg.set("Messages.Prefix", "&9Server>");
+				msg.set("Messages.usePrefix", true);
+				msg.set("Messages.Usage", "&rUsage: %command%");
 				msg.set("Messages.No-Perm", "&4You do not have permission!");
 				msg.set("Messages.Reload", "&7Plugin reloaded!");
 				msg.set("Messages.GameMode", "&7Your gamemode changed to &e%gm%");

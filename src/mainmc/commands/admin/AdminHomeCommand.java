@@ -127,10 +127,10 @@ public class AdminHomeCommand implements CommandExecutor {
 								return true;
 							}
 						}else {
-							sender.sendMessage("§rUsage: /admihome <player> <tp/delete/set> <home>");
+							sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/admihome <player> <tp/delete/set> <home>"));
 						}
 					}else {
-						sender.sendMessage("§rUsage: /admihome <player> <tp/delete/set> <home>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/admihome <player> <tp/delete/set> <home>"));
 					}
 
 				} else {

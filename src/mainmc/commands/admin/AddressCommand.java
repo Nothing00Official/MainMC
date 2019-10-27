@@ -132,7 +132,7 @@ public class AddressCommand implements CommandExecutor {
 							}
 						}
 					} else {
-						sender.sendMessage("§rUsage: /banip <player/address> [motivation]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/banip <player/address> [motivation]"));
 					}
 
 				} else {
@@ -189,7 +189,7 @@ public class AddressCommand implements CommandExecutor {
 							}
 						}
 					} else {
-						sender.sendMessage("§rUsage: /unbanip <player/address>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/unbanip <player/address>"));
 					}
 
 				} else {
@@ -223,7 +223,7 @@ public class AddressCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /seen <player/address>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/seen <player/address>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -245,7 +245,7 @@ public class AddressCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /resethost <player>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/resethost <player>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm") + " (only CONSOLE)");

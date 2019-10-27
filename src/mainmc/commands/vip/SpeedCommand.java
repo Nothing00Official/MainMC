@@ -51,7 +51,7 @@ public class SpeedCommand implements CommandExecutor {
 								sender.sendMessage(msg.getMessage("DONE"));
 								return true;
 							} else {
-								sender.sendMessage("§rUsage: /speed <player> <walk/fly> <speed>");
+								sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/speed <player> <walk/fly> <speed>"));
 							}
 
 						} else {
@@ -59,7 +59,7 @@ public class SpeedCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /speed <player> <walk/fly> <speed>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/speed <player> <walk/fly> <speed>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -106,7 +106,7 @@ public class SpeedCommand implements CommandExecutor {
 							return true;
 						}
 					}else {
-						sender.sendMessage("§rUsage: /walkspeed <speed> [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/walkspeed <speed> [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -153,7 +153,7 @@ public class SpeedCommand implements CommandExecutor {
 							return true;
 						}
 					}else {
-						sender.sendMessage("§rUsage: /flyspeed <speed> [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/flyspeed <speed> [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

@@ -156,7 +156,7 @@ public class Gamemode implements CommandExecutor {
 									msg.getMessage("GameMode").replaceAll("%gm%", GameMode.SPECTATOR.toString()));
 							break;
 						default:
-							sender.sendMessage("§rUsage: /gamemode <GameMode> [player]");
+							sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/gamemode <GameMode> [player]"));
 							break;
 
 						}
@@ -187,7 +187,7 @@ public class Gamemode implements CommandExecutor {
 											GameMode.SPECTATOR.toString()));
 									break;
 								default:
-									sender.sendMessage("§rUsage: /gamemode <GameMode> [player]");
+									sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/gamemode <GameMode> [player]"));
 									break;
 
 								}

@@ -69,7 +69,7 @@ public class SpyMailCommand implements CommandExecutor {
 									return true;
 								}
 							} else {
-								sender.sendMessage("§rUsage: /spymail <player> <read/clear/clearindex> [index]");
+								sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/spymail <player> <read/clear/clearindex> [index]"));
 							}
 						} else {
 							sender.sendMessage(msg.getMessage("NoPlayer"));
@@ -111,11 +111,11 @@ public class SpyMailCommand implements CommandExecutor {
 								return true;
 							}
 						} else {
-							sender.sendMessage("§rUsage: /spymail <player> <read/clear/clearindex> [index]");
+							sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/spymail <player> <read/clear/clearindex> [index]"));
 						}
 
 					} else {
-						sender.sendMessage("§rUsage: /spymail <player> <read/clear/clearindex> [index]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/spymail <player> <read/clear/clearindex> [index]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

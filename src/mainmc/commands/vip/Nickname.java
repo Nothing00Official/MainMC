@@ -108,7 +108,7 @@ public class Nickname implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /nick <off/nickname> [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/nick <off/nickname> [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -130,7 +130,7 @@ public class Nickname implements CommandExecutor {
 						}
 
 					} else {
-						sender.sendMessage("§rUsage: /realnick <nickname>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/realnick <nickname>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

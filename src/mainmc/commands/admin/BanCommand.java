@@ -99,7 +99,7 @@ public class BanCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /ban <player> [motivation]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/ban <player> [motivation]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -111,7 +111,7 @@ public class BanCommand implements CommandExecutor {
 				Messages msg = new Messages();
 				if (psender.hasPermission("main.tempban")) {
 					if (args.length == 0) {
-						sender.sendMessage("§rUsage: /tempban <player> <d/y/h> [motivation]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/tempban <player> <d/y/h> [motivation]"));
 						return true;
 					}
 					User user = new User(args[0]);
@@ -201,7 +201,7 @@ public class BanCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /tempban <player> <d/y/h> [motivation]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/tempban <player> <d/y/h> [motivation]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -228,7 +228,7 @@ public class BanCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /unban <player>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/unban <player>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

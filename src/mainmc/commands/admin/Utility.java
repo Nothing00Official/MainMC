@@ -108,7 +108,7 @@ public class Utility implements CommandExecutor {
 									sender.sendMessage(msg.getMessage("DONE"));
 									return true;
 								} else {
-									sender.sendMessage("§rUsage: /vanish enable/disable [player]");
+									sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/vanish enable/disable [player]"));
 								}
 
 							} else {
@@ -121,7 +121,7 @@ public class Utility implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /vanish [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/vanish [player]"));
 					}
 
 				} else {
@@ -145,7 +145,7 @@ public class Utility implements CommandExecutor {
 								return true;
 							}
 						} else {
-							sender.sendMessage("§rUsage: /xp show [player]");
+							sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/xp show [player]"));
 						}
 					} else if (args.length == 2) {
 						if (args[0].equalsIgnoreCase("show")) {
@@ -218,11 +218,11 @@ public class Utility implements CommandExecutor {
 							}
 
 						} else {
-							sender.sendMessage("§rUsage: /xp set/give <player> <amount>");
+							sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/xp set/give <player> <amount>"));
 						}
 
 					} else {
-						sender.sendMessage("§rUsage: /xp set/give <player> <amount>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/xp set/give <player> <amount>"));
 					}
 
 				} else {
@@ -245,7 +245,7 @@ public class Utility implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /kill <player>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/kill <player>"));
 					}
 
 				} else {
@@ -276,7 +276,7 @@ public class Utility implements CommandExecutor {
 
 						}
 					} else {
-						sender.sendMessage("§rUsage: /mobkill <all/entity>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/mobkill <all/entity>"));
 					}
 
 				} else {
@@ -314,7 +314,7 @@ public class Utility implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /top [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/top [player]"));
 					}
 
 				} else {
@@ -347,7 +347,7 @@ public class Utility implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /firstlogin [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/firstjoin [player]"));
 					}
 
 				} else {
@@ -382,7 +382,7 @@ public class Utility implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /spawner <mobType>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/spawner [mobType]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -423,7 +423,7 @@ public class Utility implements CommandExecutor {
 						sender.sendMessage(msg.getMessage("Strike"));
 						return true;
 					} else {
-						sender.sendMessage("§rUsage: /thor [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/thor [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -476,7 +476,7 @@ public class Utility implements CommandExecutor {
 						}
 
 					} else {
-						sender.sendMessage("§rUsage: /near <radius> [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/near <radius> [player]"));
 					}
 
 				} else {

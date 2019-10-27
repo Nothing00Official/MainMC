@@ -39,7 +39,7 @@ public class SeeInventory implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /invsee <player>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/invsee <player>"));
 					}
 
 				} else {
@@ -64,7 +64,7 @@ public class SeeInventory implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /endersee <player>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/endersee <player>"));
 					}
 
 				} else {

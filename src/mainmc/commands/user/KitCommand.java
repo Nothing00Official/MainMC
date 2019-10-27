@@ -123,7 +123,7 @@ public class KitCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /kit <kit> [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/kit <kit> [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -180,7 +180,7 @@ public class KitCommand implements CommandExecutor {
 							sender.sendMessage(msg.getMessage("Deleted"));
 							return true;
 						} else {
-							sender.sendMessage("§rUsage: /kitcreator <create/delete> <kit>");
+							sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/kitcreator <create/delete> <kit>"));
 						}
 					} else if (args.length == 3) {
 						if (args[0].equalsIgnoreCase("setdelay")) {
@@ -222,7 +222,7 @@ public class KitCommand implements CommandExecutor {
 							sender.sendMessage(msg.getMessage("setAlias"));
 							return true;
 						} else {
-							sender.sendMessage("§rUsage: /kitcreator <setdelay/setalias> <kit> <delay/alias>");
+							sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/kitcreator <setdelay/setalias> <kit> <delay/alias>"));
 						}
 					} else if (args.length > 4) {
 						if (args[0].equalsIgnoreCase("setcmd")) {
@@ -239,15 +239,15 @@ public class KitCommand implements CommandExecutor {
 							sender.sendMessage(msg.getMessage("setCmd"));
 							return true;
 						} else {
-							sender.sendMessage("§rUsage:  /kitcreator <setcmd> <kit> <command>");
+							sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/kitcreator <setcmd> <kit> <command>"));
 						}
 					} else {
-						sender.sendMessage("§rUse: /kitcreator create <kit>");
-						sender.sendMessage("§rUse: /kitcreator setdelay <kit> <delay>");
-						sender.sendMessage("§rUse: /kitcreator setalias <kit> <alias kit>");
-						sender.sendMessage("§rUse: /kitcreator setcmd <kit> <cmd>");
-						sender.sendMessage("§rUse: /kitcreator setbook <kit> <book>");
-						sender.sendMessage("§rUse: /kitcreator delete <kit>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/kitcreator create <kit>"));
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/kitcreator setdelay <kit> <delay>"));
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/kitcreator setalias <kit> <aliasKit>"));
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/kitcreator setcmd <kit> <cmd>"));
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/kitcreator setbook <kit> <book>"));
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/kitcreator delete <kit>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

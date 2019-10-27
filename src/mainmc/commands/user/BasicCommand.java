@@ -60,7 +60,7 @@ public class BasicCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /ptime [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/ptime [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -167,7 +167,7 @@ public class BasicCommand implements CommandExecutor {
 							sender.sendMessage("Pong :)");
 						}
 					} else {
-						sender.sendMessage("§rUsage: /ping [player]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/ping [player]"));
 					}
 				} else {
 					sender.sendMessage("Pong :)");
@@ -194,7 +194,7 @@ public class BasicCommand implements CommandExecutor {
 						sender.sendMessage(help.showPage());
 						return true;
 					} else {
-						sender.sendMessage("§rUsage: /help <page>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/help <page>"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -294,7 +294,7 @@ public class BasicCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /afk [player] [cause]");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/afk [player] [cause]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

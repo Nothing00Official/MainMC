@@ -7,6 +7,7 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
 import mainmc.folders.Conf;
+import mainmc.folders.Messages;
 import mainmc.nothing00.functions.User;
 
 public class LockAccountCommand implements CommandExecutor {
@@ -20,6 +21,7 @@ public class LockAccountCommand implements CommandExecutor {
 		if (sender instanceof Player) {
 
 			if (cmd.getName().equalsIgnoreCase("setlockaccount")) {
+				Messages msg = new Messages();
 				Conf config = new Conf();
 				if (config.lockAccountEnabled()) {
 					if (args.length == 1) {
@@ -34,7 +36,7 @@ public class LockAccountCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /setlockaccount <keyword>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/setlockaccount <keyword>"));
 					}
 				} else {
 					sender.sendMessage(config.getUnLockDisableMessage());
@@ -44,6 +46,7 @@ public class LockAccountCommand implements CommandExecutor {
 
 			if (cmd.getName().equalsIgnoreCase("unlockaccount")) {
 				Conf config = new Conf();
+				Messages msg = new Messages();
 				if (config.lockAccountEnabled()) {
 					if (args.length == 1) {
 						User user = new User(sender.getName());
@@ -68,7 +71,7 @@ public class LockAccountCommand implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage("§rUsage: /unlockaccount <keyword>");
+						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/unlockaccount <keyword>"));
 					}
 				} else {
 					sender.sendMessage(config.getUnLockDisableMessage());
@@ -78,6 +81,7 @@ public class LockAccountCommand implements CommandExecutor {
 
 		} else if (sender instanceof ConsoleCommandSender) {
             if(cmd.getName().equalsIgnoreCase("resetkey")) {
+             Messages msg = new Messages();
            	 if(args.length==1) {
            		 User user = new User(args[0]);
            		 if(user.isOnline()) {
@@ -91,15 +95,13 @@ public class LockAccountCommand implements CommandExecutor {
            			 System.out.println("Player not found!");
            		 }
            	 }else {
-           		 System.out.println("Usage: /resetket <player>");
+           		 System.out.println(msg.getMessage("Usage").replaceAll("%command%", " /resetket <player>"));
            	 }
             }
 		}else {
 			sender.sendMessage("§rRun this command by CONSOLE...");
 		}
-
 		
-
 		return false;
 	}
 
