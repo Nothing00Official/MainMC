@@ -205,7 +205,7 @@ public class EconomyCommand implements CommandExecutor {
 							ecosender.removeMoney();
 							eco.addMoney();
 
-							user.sendMessage(msg.getMessage("givedMoney").replaceAll("%player%", user.getName())
+							user.sendMessage(msg.getMessage("givedMoney").replaceAll("%player%", sender.getName())
 									.replace("%balance%", eco.getMoneyToString()));
 							sender.sendMessage(msg.getMessage("giveMoney").replaceAll("%player%", user.getName())
 									.replace("%balance%", eco.getMoneyToString()));

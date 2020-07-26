@@ -835,8 +835,8 @@ public class DataBase {
 
 			Statement stmt = this.getConnection().createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
-
-			return rs.getString("username");
+            if(rs.next())
+			 return rs.getString("username");
 
 		} catch (SQLException e) {
 			e.printStackTrace();

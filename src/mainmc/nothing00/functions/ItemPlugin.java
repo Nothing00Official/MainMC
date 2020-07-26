@@ -147,7 +147,6 @@ public class ItemPlugin {
 		spawner.update();
 	}
 
-
 	@SuppressWarnings("deprecation")
 	public String toString() {
 
@@ -292,7 +291,7 @@ public class ItemPlugin {
 		}
 		if (item.contains(":")) {
 			String[] split = item.split(":");
-		    if (NumberUtils.isNumber(split[1]) && Material.getMaterial(split[0].toUpperCase()) != null) {
+			if (NumberUtils.isNumber(split[1]) && Material.getMaterial(split[0].toUpperCase()) != null) {
 				return new ItemStack(Material.getMaterial(split[0].toUpperCase()), 1, Short.parseShort(split[1]));
 			}
 			return new ItemStack(Material.AIR, 1);
@@ -966,6 +965,102 @@ public class ItemPlugin {
 	@SuppressWarnings("deprecation")
 	public boolean isHat() {
 		return this.item != null && this.item.getType().getId() < 256 && this.item.getType().getId() != 0;
+	}
+
+	public static void compact(Player p) {
+		int ndiam = 0, ngold = 0, nsilv = 0, nemer = 0, nreds = 0, ncoal = 0;
+		for (ItemStack item : p.getInventory().getContents()) {
+			if (item == null) {
+				continue;
+			}
+			Material type = item.getType();
+			if (type == Material.DIAMOND) {
+				ndiam += item.getAmount();
+			} else if (type == Material.GOLD_INGOT) {
+				ngold += item.getAmount();
+			} else if (type == Material.IRON_INGOT) {
+				nsilv += item.getAmount();
+			} else if (type == Material.EMERALD) {
+				nemer += item.getAmount();
+			} else if (type == Material.REDSTONE) {
+				nreds += item.getAmount();
+			} else if (type == Material.COAL) {
+				ncoal += item.getAmount();
+			}
+		}
+		int adiam = 0, agold = 0, asilv = 0, aemer = 0, areds = 0, acoal = 0;
+		while (ndiam >= 9) {
+			ndiam -= 9;
+			adiam++;
+		}
+		while (ngold >= 9) {
+			ngold -= 9;
+			agold++;
+		}
+		while (nsilv >= 9) {
+			nsilv -= 9;
+			asilv++;
+		}
+		while (nemer >= 9) {
+			nemer -= 9;
+			aemer++;
+		}
+		while (nreds >= 9) {
+			nreds -= 9;
+			areds++;
+		}
+		while (ncoal >= 9) {
+			ncoal -= 9;
+			acoal++;
+		}
+		User user = new User(p.getName());
+		for (ItemStack item : p.getInventory().getContents()) {
+			if (item == null) {
+				continue;
+			}
+			Material type = item.getType();
+			if (type == Material.DIAMOND || type == Material.GOLD_INGOT || type == Material.IRON_INGOT
+					|| type == Material.EMERALD || type == Material.REDSTONE || type == Material.COAL) {
+				p.getInventory().removeItem(item);
+			}
+		}
+		p.updateInventory();
+		if (ncoal > 0) {
+			user.addItem(new ItemStack(Material.COAL, ncoal));
+		}
+		if (nreds > 0) {
+			user.addItem(new ItemStack(Material.REDSTONE, nreds));
+		}
+		if (nemer > 0) {
+			user.addItem(new ItemStack(Material.EMERALD, nemer));
+		}
+		if (nsilv > 0) {
+			user.addItem(new ItemStack(Material.IRON_INGOT, nsilv));
+		}
+		if (ngold > 0) {
+			user.addItem(new ItemStack(Material.GOLD_INGOT, ngold));
+		}
+		if (ndiam > 0) {
+			user.addItem(new ItemStack(Material.DIAMOND, ndiam));
+		}
+		if (acoal > 0) {
+			user.addItem(new ItemStack(Material.COAL_BLOCK, acoal));
+		}
+		if (areds > 0) {
+			user.addItem(new ItemStack(Material.REDSTONE_BLOCK, areds));
+		}
+		if (aemer > 0) {
+			user.addItem(new ItemStack(Material.EMERALD_BLOCK, aemer));
+		}
+		if (asilv > 0) {
+			user.addItem(new ItemStack(Material.IRON_BLOCK, asilv));
+		}
+		if (agold > 0) {
+			user.addItem(new ItemStack(Material.GOLD_BLOCK, agold));
+		}
+		if (adiam > 0) {
+			user.addItem(new ItemStack(Material.DIAMOND_BLOCK, adiam));
+		}
 	}
 
 }

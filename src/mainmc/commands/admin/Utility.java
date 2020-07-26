@@ -412,7 +412,10 @@ public class Utility implements CommandExecutor {
 
 						if (MainPlugin.getServerVersion().contains("1_11")
 								|| MainPlugin.getServerVersion().contains("1_12") 
-								|| MainPlugin.getServerVersion().contains("1_13")) {
+								|| MainPlugin.getServerVersion().contains("1_13")
+							    || MainPlugin.getServerVersion().contains("1_14")
+                                || MainPlugin.getServerVersion().contains("1_15")
+                                || MainPlugin.getServerVersion().contains("1_16")){
 							loc = new PluginLoc(((Player) sender).getEyeLocation());
 						} else {
 							loc = new PluginLoc(

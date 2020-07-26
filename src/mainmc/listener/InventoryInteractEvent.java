@@ -164,7 +164,7 @@ public class InventoryInteractEvent implements Listener {
 		if (!e.getView().getTitle().contains("Kit:"))
 			return;
 
-		Kit kit = new Kit(e.getInventory().getTitle().split(" ")[1], (Player) e.getPlayer());
+		Kit kit = new Kit(e.getView().getTitle().split(" ")[1], (Player) e.getPlayer());
 
 		kit.createKit(e.getInventory());
 		e.getPlayer().sendMessage(msg.getMessage("KitCreate").replaceAll("%kit%", kit.getName()));

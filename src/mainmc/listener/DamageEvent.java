@@ -44,7 +44,7 @@ public class DamageEvent implements Listener {
 				return;
 			}
 
-			if (safe.contains(e.getEntity().getName())) {
+			if (safe.contains(p.getName())) {
 				e.setCancelled(true);
 			}
 
@@ -94,7 +94,7 @@ public class DamageEvent implements Listener {
 				return;
 			}
 
-			if (safe.contains(e.getEntity().getName())) {
+			if (safe.contains(p.getName())) {
 				e.setCancelled(true);
 			}
 

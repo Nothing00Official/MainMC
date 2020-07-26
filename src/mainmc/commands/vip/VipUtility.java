@@ -19,7 +19,7 @@ public class VipUtility implements CommandExecutor {
 
 	public static String[] getCommands() {
 		String[] array = { "feed", "heal", "god", "repair", "workbench", "clear", "fly", "suicide", "getpos",
-				"lastlocation", "skull", "burn", "ext", "nightvision" };
+				"lastlocation", "skull", "burn", "ext", "nightvision", "compact" };
 		return array;
 	}
 
@@ -229,7 +229,8 @@ public class VipUtility implements CommandExecutor {
 									sender.sendMessage(msg.getMessage("DONE"));
 									return true;
 								} else {
-									sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/god enable/disable [player]"));
+									sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%",
+											"/god enable/disable [player]"));
 								}
 							} else {
 								sender.sendMessage(msg.getMessage("NoPlayer"));
@@ -324,7 +325,8 @@ public class VipUtility implements CommandExecutor {
 									sender.sendMessage(msg.getMessage("DONE"));
 									return true;
 								} else {
-									sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/fly enable/disable [player]"));
+									sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%",
+											"/fly enable/disable [player]"));
 								}
 
 							} else {
@@ -419,10 +421,12 @@ public class VipUtility implements CommandExecutor {
 								return true;
 							}
 						} else {
-							sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/repair hand/all [player]"));
+							sender.sendMessage(
+									msg.getMessage("Usage").replaceAll("%command%", "/repair hand/all [player]"));
 						}
 					} else {
-						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/repair hand/all [player]"));
+						sender.sendMessage(
+								msg.getMessage("Usage").replaceAll("%command%", "/repair hand/all [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -537,8 +541,10 @@ public class VipUtility implements CommandExecutor {
 						if (!(sender instanceof Player))
 							return true;
 						User user = User.getUser(sender.getName());
-						if (user.getLastLocation() == null)
+						if (user.getLastLocation() == null) {
 							return true;
+						}
+
 						PluginLoc loc = new PluginLoc(user.getLastLocation());
 						sender.sendMessage(msg.getMessage("Last").replaceAll("%location%", loc.toString())
 								.replaceAll("%player%", sender.getName()));
@@ -553,7 +559,8 @@ public class VipUtility implements CommandExecutor {
 										return true;
 									PluginLoc loc = new PluginLoc(user.getLastLocation());
 									sender.sendMessage(
-											msg.getMessage("Last").replaceAll("%location%", loc.toStringComplete()));
+											msg.getMessage("Last").replaceAll("%location%", loc.toStringComplete())
+													.replaceAll("%player%", user.getName()));
 								} else {
 									sender.sendMessage(
 											msg.getMessage("Last").replaceAll("%location%", user.getQuitLocation())
@@ -603,7 +610,8 @@ public class VipUtility implements CommandExecutor {
 							return true;
 						}
 					} else {
-						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/skull <playername> [player]"));
+						sender.sendMessage(
+								msg.getMessage("Usage").replaceAll("%command%", "/skull <playername> [player]"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));
@@ -705,6 +713,21 @@ public class VipUtility implements CommandExecutor {
 						}
 					} else {
 						sender.sendMessage(msg.getMessage("Usage").replaceAll("%command%", "/nightvision [player]"));
+					}
+				} else {
+					sender.sendMessage(msg.getMessage("No-Perm"));
+					return true;
+				}
+			}
+
+			if (cmd.getName().equalsIgnoreCase("compact")) {
+				Messages msg = new Messages();
+				if (psender.hasPermission("main.compact")) {
+					if (!(sender instanceof Player)) {
+						System.out.println("YOU MUST BE A PLAYER!");
+					} else {
+						ItemPlugin.compact((Player) sender);
+						sender.sendMessage(msg.getMessage("DONE"));
 					}
 				} else {
 					sender.sendMessage(msg.getMessage("No-Perm"));

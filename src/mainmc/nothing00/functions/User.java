@@ -306,7 +306,7 @@ public class User extends UserData {
 	}
 
 	public boolean isOnline() {
-		return Bukkit.getServer().getPlayer(this.user) != null && User.getUser(this.user) != null;
+		return Bukkit.getServer().getPlayer(this.user) != null && User.getUser(this.user)!=null;
 	}
 
 	public Player getPlayer() {
@@ -777,7 +777,7 @@ public class User extends UserData {
 		Motd motd = new Motd();
 
 		this.getPlayer()
-				.sendMessage(motd.showMotd().replaceAll("&", "ยง").replace("{player}", this.getName())
+				.sendMessage(motd.showMotd().replaceAll("&", "ง").replace("{player}", this.getName())
 						.replace("{displayname}", this.getPlayer().getDisplayName())
 						.replace("{onlineplayers}", Bukkit.getOnlinePlayers().size() + "")
 						.replace("{day}", "" + LocalDate.now().getDayOfMonth())
@@ -847,11 +847,11 @@ public class User extends UserData {
 	}
 
 	public String getLastBanMotivation() {
-		return super.getString("userdata.last-ban").replaceAll("&", "ยง").replaceAll("_", " ");
+		return super.getString("userdata.last-ban").replaceAll("&", "ง").replaceAll("_", " ");
 	}
 
 	public String getLastMuteMotivation() {
-		return super.getString("userdata.last-mute").replaceAll("&", "ยง").replaceAll("_", " ");
+		return super.getString("userdata.last-mute").replaceAll("&", "ง").replaceAll("_", " ");
 	}
 
 	public void saveQuitLocation() {
@@ -952,14 +952,14 @@ public class User extends UserData {
 		int nvanish = 0;
 		for (Player p : Bukkit.getOnlinePlayers()) {
 			if (User.getUser(p.getName()).hasVanish()) {
-				list.add("ยงc" + p.getName());
+				list.add("งc" + p.getName());
 				nvanish++;
 			} else {
-				list.add("ยงe" + p.getName());
+				list.add("งe" + p.getName());
 			}
 		}
 		return msg.getMessage("OpList").replaceAll("%count%", Bukkit.getOnlinePlayers().size() + "")
-				.replaceAll("%vanishcount%", nvanish + "") + "\n" + String.join("ยง7, ", list.toArray(new String[0]));
+				.replaceAll("%vanishcount%", nvanish + "") + "\n" + String.join("ง7, ", list.toArray(new String[0]));
 	}
 
 	public static String viewList() {
@@ -969,11 +969,11 @@ public class User extends UserData {
 			if (User.getUser(p.getName()).hasVanish()) {
 				continue;
 			} else {
-				list.add("ยงe" + p.getName());
+				list.add("งe" + p.getName());
 			}
 		}
 		return msg.getMessage("List").replaceAll("%count%", Bukkit.getOnlinePlayers().size() + "") + "\n"
-				+ String.join("ยง7, ", list.toArray(new String[0]));
+				+ String.join("ง7, ", list.toArray(new String[0]));
 	}
 
 	public static List<String> getUserList() {

@@ -120,9 +120,10 @@ public class Nickname implements CommandExecutor {
 				Messages msg = new Messages();
 				if (psender.hasPermission("main.realname")) {
 					if (args.length == 1) {
-						if (ChatManager.getRealname(args[0]) != null) {
+						String name = ChatManager.getRealname(args[0]);
+						if (name != null) {
 							sender.sendMessage(msg.getMessage("Realname").replaceAll("%nick%", args[0])
-									.replaceAll("%name%", ChatManager.getRealname(args[0])));
+									.replaceAll("%name%", name));
 							return true;
 						} else {
 							sender.sendMessage(msg.getMessage("NoPlayer"));

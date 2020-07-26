@@ -84,7 +84,7 @@ public class ChatCommand implements CommandExecutor {
 			if (cmd.getName().equalsIgnoreCase("helpstaff")) {
 				Messages msg = new Messages();
 				if (psender.hasPermission("main.helpstaff")) {
-					if (args.length > 1) {
+					if (args.length > 0) {
 						if (!(sender instanceof Player))
 							return true;
 						String mess = "";
