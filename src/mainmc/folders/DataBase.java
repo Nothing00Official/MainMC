@@ -696,7 +696,7 @@ public class DataBase {
 
 		user = user.toLowerCase();
 
-		String sql = "SELECT expire FROM mute_table username = '" + user + "';";
+		String sql = "SELECT expire FROM mute_table where username = '" + user + "';";
 
 		try {
 
