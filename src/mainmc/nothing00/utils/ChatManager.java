@@ -47,6 +47,23 @@ public class ChatManager {
 
 	public void sendPrivateMessage(Player to) {
 		Conf config = new Conf();
+		Messages msg = new Messages();
+		User user = new User(this.p.getName());
+		if (user.isMuted()) {
+			if (user.getMuteExpire() != null) {
+				Time time = new Time(user.getMuteExpire());
+				if (time.isPastOrPresent()) {
+					user.setMute(false);
+				} else {
+					user.sendMessage(msg.getMessage("onChat"));
+					return;
+				}
+
+			} else {
+				user.sendMessage(msg.getMessage("onChat"));
+				return;
+			}
+		}
 		this.p.sendMessage(config.getSendMessage().replaceAll("%to%", to.getName()).replaceAll("%message%", this.msg));
 		to.sendMessage(
 				config.getReceivedMessage().replaceAll("%from%", this.p.getName()).replaceAll("%message%", this.msg));
@@ -56,18 +73,18 @@ public class ChatManager {
 
 	public String colorize(boolean color, boolean format, boolean magic) {
 		if (color) {
-			this.msg = this.msg.replaceAll("&1", "ง1").replaceAll("&2", "ง2").replaceAll("&3", "ง3")
-					.replaceAll("&4", "ง4").replaceAll("&5", "ง5").replaceAll("&6", "ง6").replaceAll("&7", "ง7")
-					.replaceAll("&8", "ง8").replaceAll("&9", "ง9").replaceAll("&0", "ง0").replaceAll("&a", "งa")
-					.replaceAll("&b", "งb").replaceAll("&c", "งc").replaceAll("&d", "งd").replaceAll("&e", "งe")
-					.replaceAll("&f", "งf");
+			this.msg = this.msg.replaceAll("&1", "ยง1").replaceAll("&2", "ยง2").replaceAll("&3", "ยง3")
+					.replaceAll("&4", "ยง4").replaceAll("&5", "ยง5").replaceAll("&6", "ยง6").replaceAll("&7", "ยง7")
+					.replaceAll("&8", "ยง8").replaceAll("&9", "ยง9").replaceAll("&0", "ยง0").replaceAll("&a", "ยงa")
+					.replaceAll("&b", "ยงb").replaceAll("&c", "ยงc").replaceAll("&d", "ยงd").replaceAll("&e", "ยงe")
+					.replaceAll("&f", "ยงf");
 		}
 		if (format) {
-			this.msg = this.msg.replaceAll("&l", "งl").replaceAll("&m", "งm").replaceAll("&n", "งn")
-					.replaceAll("&o", "งo").replaceAll("&m", "งm").replaceAll("&n", "งn");
+			this.msg = this.msg.replaceAll("&l", "ยงl").replaceAll("&m", "ยงm").replaceAll("&n", "ยงn")
+					.replaceAll("&o", "ยงo").replaceAll("&m", "ยงm").replaceAll("&n", "ยงn");
 		}
 		if (magic) {
-			this.msg = this.msg.replaceAll("&k", "งk");
+			this.msg = this.msg.replaceAll("&k", "ยงk");
 		}
 		return this.msg;
 	}
@@ -89,7 +106,7 @@ public class ChatManager {
 	public void serverBroadcast() {
 		Messages msg = new Messages();
 		String desc = msg.getMessage("Broadcast").replaceAll("%message%", this.msg);
-		Bukkit.broadcastMessage(desc.replaceAll("&", "ง"));
+		Bukkit.broadcastMessage(desc.replaceAll("&", "ยง"));
 	}
 
 	public static String getRealname(String nick) {
@@ -104,12 +121,12 @@ public class ChatManager {
 		String ann = anns.get(0);
 		for (int i = 1; i < anns.size(); i++) {
 			if (anns.get(i).isEmpty()) {
-				ann += "งr\n                     \n";
+				ann += "ยงr\n                     \n";
 				continue;
 			}
-			ann += "\nงr" + anns.get(i);
+			ann += "\nยงr" + anns.get(i);
 		}
-		return ann.replaceAll("&", "ง");
+		return ann.replaceAll("&", "ยง");
 	}
 
 	public static boolean isUsed(String nick) {
@@ -155,7 +172,7 @@ public class ChatManager {
 		String display = "";
 		if (user.getPlayer().isOp()) {
 			if (!config.getOpChar().isEmpty())
-				display += "ง" + config.getOpChar();
+				display += "ยง" + config.getOpChar();
 		}
 		if (user.hasNickname()) {
 			ChatManager cm = new ChatManager(user.getPlayer(), user.getNickname());
@@ -164,9 +181,9 @@ public class ChatManager {
 			display += user.getPlayer().getName();
 		}
 		if (config.useChat())
-			user.getPlayer().setDisplayName(display + "งr");
+			user.getPlayer().setDisplayName(display + "ยงr");
 		else
-			user.getPlayer().setDisplayName(perm.getPrefix() + "" + display + "งr" + perm.getSuffix());
+			user.getPlayer().setDisplayName(perm.getPrefix() + "" + display + "ยงr" + perm.getSuffix());
 	}
 
 }
