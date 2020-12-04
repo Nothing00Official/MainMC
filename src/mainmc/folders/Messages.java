@@ -111,7 +111,7 @@ public class Messages extends Config {
 			    msg.set("Messages.onGod", "&7GodMode &aEnabled&7!");
 			    msg.set("Messages.offGod", "&7GodMode &cDisabled&7!");
 			    msg.set("Messages.InvalidItem", "&7You must have a block in your hand!");
-			    msg.set("Messages.Head", "&7You have an hat in your head now!");
+			    msg.set("Messages.Head", "&7You have a hat on your head now!");
 			    msg.set("Messages.RemoveHat", "&7Your hat has been removed!");
 			    msg.set("Messages.onFly", "&7FlyMode &aEnabled&7!");
 			    msg.set("Messages.offFly", "&7FlyMode &cDisabled&7!");
