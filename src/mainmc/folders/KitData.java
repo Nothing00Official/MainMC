@@ -125,7 +125,7 @@ public class KitData extends Config {
 	public List<String> getCommands() {
 		List<String> commands = new ArrayList<String>();
 		for (String s : getInventory()) {
-			if (s.contains("kit:")) {
+			if (s.contains("cmd:")) {
 				commands.add(s.substring(5, s.length()));
 			}
 		}
