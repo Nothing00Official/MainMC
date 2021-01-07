@@ -2,6 +2,7 @@ name: MainMC
 main: mainmc.nothing00.MainPlugin
 version: 3.7
 author: Nothing00
+api-version: 1.15
 description: The Main Minecraft server plugin
 load: STARTUP
 commands:
