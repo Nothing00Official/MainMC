@@ -59,7 +59,7 @@ public class Help {
 				writer.println("&1PAY: &6/pay <player> <ammount>. Pays a specified player.");
 				writer.println("&1AFK: &6/afk. Set your status as AFK");
 				writer.println("&&1HELPSTAFF: &6/helpstaff <message>. Request help from online staff.");
-				writer.println("&1IGNORE: &6/igonre <player>. Ignore a player");
+				writer.println("&1IGNORE: &6/ignore <player>. Ignore a player");
 				writer.println("&1MAIL: &6/mail <read/clear/send>. To read your emails");
 				writer.println("&1MSG: &6/msg <player> <message>. Send a private message");
 				writer.println("&1SUICIDE: &6/suicide. Commit suicide.");
